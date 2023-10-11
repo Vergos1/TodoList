@@ -192,6 +192,12 @@ button {
 }
 
 @media screen and (max-width: 720px) {
+  .container {
+    padding: 50px 0;
+  }
+  .todolist {
+    max-width: 90%;
+  }
   .todolist__header {
     flex-direction: column;
     justify-content: center;
