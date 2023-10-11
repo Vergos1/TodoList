@@ -1,0 +1,67 @@
+"use strict"
+
+const input = document.querySelector(".todolist__input");
+const contentBlock = document.querySelector(".todolist__content");
+const buttonAdd = document.querySelector(".todolist__add");
+const buttonDeleteAll = document.querySelector(".todolist__delete-all");
+
+//note save in localstorage
+let savedItems = JSON.parse(localStorage.getItem("todoItems")) || [];
+console.log(savedItems)
+
+for (const item of savedItems) {
+  contentBlock.innerHTML += item;
+}
+
+//note function add item(input value)
+function addTodoItem() {
+  const inputValue = input.value;
+  if (inputValue.length < 1) {
+    return
+  }
+  const todoItem = `
+     <div class="todolist__item">
+        <span class="todolist__label">${inputValue}</span>
+        <button class="todolist__delete">
+            <img src="./img/delete-icon.svg" alt="delete">
+        </button>
+     </div>
+`;
+  contentBlock.innerHTML += todoItem;
+  savedItems.push(todoItem);
+  localStorage.setItem("todoItems", JSON.stringify(savedItems));
+  input.value = "";
+}
+
+//note add item (press enter)
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTodoItem();
+  }
+});
+//note add item (click)
+buttonAdd.addEventListener("click", addTodoItem);
+
+//note function remove all item
+function removeAllTodoItem() {
+  savedItems = [];
+  localStorage.removeItem("todoItems");
+  contentBlock.innerHTML = "";
+}
+
+//note remove all item(click)
+buttonDeleteAll.addEventListener("click", removeAllTodoItem);
+
+const buttonDeleteOnce = document.querySelectorAll(".todolist__delete");
+
+//note add an event to all buttons > remove once item(click)
+buttonDeleteOnce.forEach(button => {
+  button.addEventListener("click", () => {
+    const itemIndex = savedItems.findIndex(item => item.includes(button.parentElement.textContent.trim()));
+    if (itemIndex !== -1) {
+      savedItems.splice(itemIndex, 1);
+      button.parentElement.remove();
+      localStorage.setItem("todoItems", JSON.stringify(savedItems));
+    }
+  })
+})
