@@ -129,7 +129,7 @@ button {
     }
   }
 
-  &__complite > * {
+  &__done > * {
     width: 20px;
     height: 20px;
     padding: 4px 6px;
@@ -183,11 +183,4 @@ button {
   opacity: 0.3;
   pointer-events: none;
   transition: opacity 0.3s ease, max-height 0.3s ease;
-}
-.animationDelete {
-  opacity: 0;
-  max-height: 0;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
 }
