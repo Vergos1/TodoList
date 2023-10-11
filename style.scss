@@ -33,9 +33,11 @@ input {
   width: 280px;
   height: 39px;
 }
+
 input[placeholder] {
- font-size: 14px;
+  font-size: 14px;
 }
+
 button {
   outline: none;
   box-shadow: none;
@@ -103,12 +105,13 @@ button {
   &__add > * {
     padding: 4px 6px;
     transition: all 0.3s ease;
-    background: #323232;
+    background: #FEE600;
     width: 30px;
     height: 30px;
+    opacity: 0.6;
 
     &:hover {
-      background: #FEE600;
+      opacity: 1;
     }
   }
 
@@ -118,14 +121,31 @@ button {
     padding: 4px 6px;
     border-radius: 4px;
     transition: all 0.3s ease;
+    background: #FEE600;
+    opacity: 0.7;
 
     &:hover {
-      background: #FEE600;
+      opacity: 1;
+    }
+  }
+
+  &__complite > * {
+    width: 20px;
+    height: 20px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: #FEE600;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
     }
   }
 
   &__label {
     max-width: 80%;
+
     &:active {
       cursor: pointer;
     }
@@ -139,23 +159,35 @@ button {
     padding: 10px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-
     &:hover {
-      background: #2C2C2C;
+      background: rgb(58, 58, 58);
       cursor: pointer;
-
-      .todolist__label {
-        opacity: 0.8;
-      }
     }
-
     &:active {
       cursor: grabbing;
     }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
   }
 }
 
 .active-tab {
   color: #181818;
   background: #FEE600;
+}
+
+.done-todo {
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+.animationDelete {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }

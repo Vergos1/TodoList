@@ -7,14 +7,16 @@ const buttonDeleteAll = document.querySelector(".todolist__delete-all");
 
 let savedItems = JSON.parse(localStorage.getItem("todoItems")) || [];
 
-//note Function for deleting a task/Функция удаления задачи
-function deleteTask(itemElement) {
-  savedItems = savedItems.filter((item) => item !== itemElement);
+function updateLocalStorage() {
   localStorage.setItem("todoItems", JSON.stringify(savedItems));
+}
+
+function deleteTask(index) {
+  savedItems.splice(index, 1);
+  updateLocalStorage();
   renderItems();
 }
 
-//note Function for adding a task/Функция добавления задачи
 function addTodoItem() {
   const inputValue = input.value;
   if (inputValue.length < 1) {
@@ -22,30 +24,35 @@ function addTodoItem() {
   }
   const todoItem = `
      <div class="todolist__item">
-        <span class="todolist__label">${inputValue}</span>
-        <button class="todolist__delete">
-            <img src="./img/delete-icon.svg" alt="delete">
-        </button>
+            <span class="todolist__label">${inputValue}</span>
+        <div class="todolist__buttons">
+            <button class="todolist__complite complite-todo-button">
+                <img src="./img/check.svg" alt="complite">
+            </button>
+            <button class="todolist__delete">
+                <img src="./img/delete-icon.svg" alt="delete">
+            </button>
+        </div>
      </div>
   `;
   savedItems.push(todoItem);
-  localStorage.setItem("todoItems", JSON.stringify(savedItems));
+  updateLocalStorage();
   renderItems();
   input.value = "";
 }
 
-//note Function for displaying tasks/Функция отображения задач
 function renderItems() {
   contentBlock.innerHTML = savedItems.join("");
   const deleteButtons = contentBlock.querySelectorAll(".todolist__delete");
   deleteButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      deleteTask(savedItems[index]);
+      deleteTask(index);
     });
   });
+  buttonDoneHandler();
 }
-
 renderItems();
+
 
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -62,3 +69,17 @@ function removeAllTodoItem() {
 }
 
 buttonDeleteAll.addEventListener("click", removeAllTodoItem);
+
+
+function buttonDoneHandler () {
+  const buttonDoneOnce = contentBlock.querySelectorAll(".todolist__complite");
+  buttonDoneOnce.forEach((button, index) => {
+    button.addEventListener("click", (e) => {
+      const parentItem = e.currentTarget.closest(".todolist__item");
+      parentItem.classList.toggle("done-todo");
+      savedItems[index] = parentItem.outerHTML;
+      updateLocalStorage();
+    })
+  });
+}
+buttonDoneHandler();

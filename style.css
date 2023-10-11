@@ -100,12 +100,13 @@ button {
 .todolist__add > * {
   padding: 4px 6px;
   transition: all 0.3s ease;
-  background: #323232;
+  background: #FEE600;
   width: 30px;
   height: 30px;
+  opacity: 0.6;
 }
 .todolist__add > *:hover {
-  background: #FEE600;
+  opacity: 1;
 }
 .todolist__delete > * {
   width: 20px;
@@ -113,9 +114,23 @@ button {
   padding: 4px 6px;
   border-radius: 4px;
   transition: all 0.3s ease;
+  background: #FEE600;
+  opacity: 0.7;
 }
 .todolist__delete > *:hover {
+  opacity: 1;
+}
+.todolist__complite > * {
+  width: 20px;
+  height: 20px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
   background: #FEE600;
+  opacity: 0.7;
+}
+.todolist__complite > *:hover {
+  opacity: 1;
 }
 .todolist__label {
   max-width: 80%;
@@ -133,19 +148,34 @@ button {
   transition: all 0.3s ease;
 }
 .todolist__item:hover {
-  background: #2C2C2C;
+  background: rgb(58, 58, 58);
   cursor: pointer;
-}
-.todolist__item:hover .todolist__label {
-  opacity: 0.8;
 }
 .todolist__item:active {
   cursor: grabbing;
+}
+.todolist__buttons {
+  display: flex;
+  gap: 10px;
 }
 
 .active-tab {
   color: #181818;
   background: #FEE600;
+}
+
+.done-todo {
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.animationDelete {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
