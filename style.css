@@ -174,12 +174,6 @@ button {
 }
 
 @media screen and (max-width: 720px) {
-  .todolist__input:first-child {
-    display: none;
-  }
-  .todolist__input:last-child {
-    display: flex;
-  }
   .container {
     padding: 50px 0;
   }
