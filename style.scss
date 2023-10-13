@@ -37,7 +37,9 @@ input {
 input[placeholder] {
   font-size: 14px;
 }
-
+ul {
+padding-left: 30px;
+}
 button {
   outline: none;
   box-shadow: none;
@@ -94,13 +96,46 @@ button {
 
   &__content {
     padding: 20px 24px;
-    display: flex;
     flex-direction: column;
     gap: 15px;
     height: 350px;
     overflow-y: scroll;
   }
-
+  &__message {
+    background: #1C1C1C;
+    padding: 10px;
+  }
+  &__documentation {
+    padding: 20px 24px;
+    height: 350px;
+    overflow-y: scroll;
+    gap: 20px;
+    flex-direction: column;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 18px;
+      color: #FEE600;
+    }
+    li {
+      font-size: 14px;
+      color: #9D9D9D;
+      span {
+          font-weight: 800;
+      }
+    }
+    p {
+      font-size: 18px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+    }
+  }
   &__task-add {
     display: flex;
     align-items: center;
@@ -127,6 +162,7 @@ button {
     transition: all 0.3s ease;
     background: #FEE600;
     opacity: 0.7;
+
     &:hover {
       opacity: 1;
     }
@@ -148,6 +184,7 @@ button {
 
   &__label {
     max-width: 80%;
+
     &:active {
       cursor: pointer;
     }
@@ -177,13 +214,20 @@ button {
     display: flex;
     gap: 10px;
   }
+
+  &__content, &__documentation {
+    display: none;
+  }
 }
 
 .active-tab {
   color: #181818;
   background: #FEE600;
-}
 
+}
+.active-content {
+  display: flex;
+}
 .done-todo {
   opacity: 0.3;
   transition: opacity 0.3s ease, max-height 0.3s ease;
@@ -218,5 +262,8 @@ button {
   }
   .todolist__label {
     max-width: 65%;
+  }
+  .todolist__message {
+    order: 3;
   }
 }

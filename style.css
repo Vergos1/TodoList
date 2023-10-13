@@ -39,6 +39,10 @@ input[placeholder] {
   font-size: 14px;
 }
 
+ul {
+  padding-left: 30px;
+}
+
 button {
   outline: none;
   box-shadow: none;
@@ -90,11 +94,45 @@ button {
 }
 .todolist__content {
   padding: 20px 24px;
-  display: flex;
   flex-direction: column;
   gap: 15px;
   height: 350px;
   overflow-y: scroll;
+}
+.todolist__message {
+  background: #1C1C1C;
+  padding: 10px;
+}
+.todolist__documentation {
+  padding: 20px 24px;
+  height: 350px;
+  overflow-y: scroll;
+  gap: 20px;
+  flex-direction: column;
+}
+.todolist__documentation div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.todolist__documentation h3 {
+  font-weight: 600;
+  font-size: 18px;
+  color: #FEE600;
+}
+.todolist__documentation li {
+  font-size: 14px;
+  color: #9D9D9D;
+}
+.todolist__documentation li span {
+  font-weight: 800;
+}
+.todolist__documentation p {
+  font-size: 18px;
+}
+.todolist__documentation h1 {
+  font-size: 24px;
+  font-weight: 900;
 }
 .todolist__task-add {
   display: flex;
@@ -162,10 +200,17 @@ button {
   display: flex;
   gap: 10px;
 }
+.todolist__content, .todolist__documentation {
+  display: none;
+}
 
 .active-tab {
   color: #181818;
   background: #FEE600;
+}
+
+.active-content {
+  display: flex;
 }
 
 .done-todo {
@@ -202,6 +247,9 @@ button {
   }
   .todolist__label {
     max-width: 65%;
+  }
+  .todolist__message {
+    order: 3;
   }
 }
 

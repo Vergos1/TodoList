@@ -25,18 +25,160 @@
             <header class="todolist__header">
                 <div class="todolist__task-add">
                     <input type="text" name="input-add" placeholder="enter the name of the task"
-                           aria-label="Введіть назву завдання" id="input-add" class="todolist__input" value="" maxlength="100">
+                           aria-label="Введіть назву завдання" id="input-add" class="todolist__input" value=""
+                           maxlength="100">
                     <button type="button" class="todolist__add">
                         <img src="./img/add-icon.svg" alt="add">
                     </button>
                 </div>
                 <div class="todolist__button-tab">
-                    <button class="todolist__tab">tasks</button>
-                    <button class="todolist__tab">task done</button>
+                    <button class="todolist__tab">todo</button>
+                    <button class="todolist__tab">documentation</button>
                     <button class="todolist__delete-all">delete all</button>
                 </div>
             </header>
             <div class="todolist__content">
+            </div>
+            <div class="todolist__documentation">
+
+                <h1>To-Do List Documentation</h1>
+
+                <div>
+                    <h3>Introduction</h3>
+                    This documentation provides a guide on how to use the To-Do List application. The To-Do List allows
+                    you to add, complete, and delete tasks, and view documentation. The application is implemented using
+                    HTML, CSS, and JavaScript.
+                </div>
+
+                <div>
+                    <h3> Getting Started</h3>
+                    <ul>
+                        <li> Clone or download the project's source code and open the HTML file in a web browser.</li>
+                        <li> You will see a To-Do List user interface with a text input field, tabs for content and
+                            documentation, and buttons for adding, deleting all tasks, and tab navigation.
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>User Interface Elements</h3>
+                    <ul>
+                        <li>
+                            <span>Input Field</span>
+                            Located at the top of the application.
+                            Allows you to input new tasks.
+                            Press the 'Enter' key to add a task.
+                        </li>
+                        <li>
+                            <span>Tab</span>
+                            Two tabs are provided: "Content" and "Documentation."
+                            Click a tab to switch between content and documentation views.
+                            The active tab is highlighted.
+                        </li>
+                        <li>
+                            <span>Add Button</span>
+                            A button labeled "Add" is provided.
+                            Click this button to add a task from the input field.
+                        </li>
+                        <li>
+                            <span>Delete All Button</span>
+                            A button labeled "Delete All" is provided.
+                            Click this button to delete all tasks.
+                        </li>
+                        <li>
+                            <span>Content Block</span>
+                            The area to display and manage your tasks.
+                        </li>
+                        <li>
+                            <span>Documentation Block</span>
+                            The area to display documentation.
+                        </li>
+                        <li>
+                            <span>Task Items</span>
+                            Each task is displayed as an item within the content block.
+                            Task items contain a task label, a "Done" button, and a "Delete" button.
+                        </li>
+                        <li>
+                            <span>"Done" Button</span>
+                            Located within each task item.
+                            Click this button to mark a task as completed. The task will be visually marked as done, and
+                            you can toggle the completion status by clicking it again.
+                        </li>
+                        <li>
+                            <span> "Delete" Button</span>
+                            Located within each task item.
+                            Click this button to delete the corresponding task.
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Adding Tasks</h3>
+                    <p>To add a new task:</p>
+                    <ul>
+                        <li>Enter the task description in the input field.</li>
+                        <li>Press the 'Enter' key or click the "Add" button.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Completing Tasks</h3>
+                    <p>To mark a task as completed:</p>
+                    <ul>
+                        <li> In the Content view, find the task you want to complete.</li>
+                        <li>Click the "Done" button associated with that task.</li>
+                        <li>The task will be visually marked as done. Click the button again to undo the completion.
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Deleting Tasks </h3>
+                    <p>To delete a task:
+
+                    </p>
+                    <ul>
+                        <li>In the Content view, find the task you want to delete</li>
+                        <li>Click the "Delete" button associated with that task.</li>
+                        <li>The task will be removed from the list.
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Deleting All Tasks</h3>
+                    <p>To delete all tasks:</p>
+                    <ul>
+                        <li>Click the "Delete All" button.</li>
+                        <li>All tasks will be removed from the list.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Switching between Content and Documentation</h3>
+                    <p>To switch between the Content and Documentation views:</p>
+                    <ul>
+                        <li>Click the "Content" tab to view your tasks.</li>
+                        <li>Click the "Documentation" tab to view the documentation.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Saving and Local Storage
+                    </h3>
+                    <p>The To-Do List uses local storage to save your tasks, ensuring they persist across sessions. Your
+                        tasks will be loaded from local storage when you revisit the application.</p>
+                </div>
+                <div>
+                    <h3>Notes</h3>
+                    <ul>
+                        <li>The To-Do List application is an example and does not have advanced features like user
+                            accounts or sharing.
+                        </li>
+                        <li>You can customize the design and functionality by modifying the provided HTML, CSS, and
+                            JavaScript code.
+                        </li>
+                    </ul>
+                </div>
+                <p>Now that you understand how to use the To-Do List application, you can start organizing your tasks
+                    effectively.</p>
             </div>
         </div>
     </div>
